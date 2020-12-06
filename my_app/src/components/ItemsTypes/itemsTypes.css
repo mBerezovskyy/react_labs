@@ -1,0 +1,16 @@
+.item-type-img {
+  height: 300px;
+}
+
+.item-type-card {
+  border: none;
+}
+
+.item-type:hover {
+  text-decoration: none;
+}
+
+.item-type-footer {
+  border: none;
+  color: black;
+}

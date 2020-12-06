@@ -1,0 +1,21 @@
+.item-button {
+  background-color: #d8ac9c;
+  border-color: #d8ac9c;
+  color: black;
+  font-weight: 600;
+}
+
+.item-button:hover {
+  background-color: #825959;
+  border-color: #825959;
+}
+
+.price {
+  font-size: 1.5em;
+  padding-top: 3px;
+}
+
+.price-wrapper {
+  display: flex;
+  vertical-align: center;
+}
