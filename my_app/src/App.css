@@ -1,0 +1,10 @@
+.section-name {
+  font-size: 2.3em;
+}
+
+.section-line {
+  height: 3px;
+  width: 30px;
+  background-color: red;
+  margin: 0 auto;
+}

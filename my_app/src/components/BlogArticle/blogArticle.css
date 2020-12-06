@@ -1,0 +1,20 @@
+.blog-link {
+  display: flex;
+  justify-content: center;
+  color: #d8ac9c;
+  font-weight: 600;
+}
+
+.blog-article {
+  border: none;
+}
+
+.blog-link:hover {
+  color: #825959;
+  text-decoration: none;
+}
+
+.by,
+.on {
+  font-weight: bold;
+}

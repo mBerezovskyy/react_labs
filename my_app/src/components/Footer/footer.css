@@ -1,0 +1,34 @@
+.social-icon {
+  color: #fff;
+  font-size: 2em;
+}
+
+.facebook:hover {
+  color: #4267b2;
+}
+
+.twitter:hover {
+  color: #1da1f2;
+}
+
+.instagram:hover {
+  color: red;
+}
+
+footer {
+  background-color: black;
+  padding: 50px;
+}
+
+.shop-location {
+  text-align: center;
+  font-size: 1em;
+  color: #fff;
+}
+
+.line {
+  width: 90%;
+  height: 2px;
+  background-color: #fff;
+  margin: 50px auto;
+}
