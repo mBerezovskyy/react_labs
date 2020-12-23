@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer>
       <Container>
-        <Row className="text-center">
+        <Row className="text-center icons-container">
           <Col>
             <a href="/#">
               <FontAwesomeIcon className="social-icon facebook" icon={faFacebook} />
