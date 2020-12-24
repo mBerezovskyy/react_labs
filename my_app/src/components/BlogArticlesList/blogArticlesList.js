@@ -12,8 +12,14 @@ const BlogArticlesList = props => {
       <Row>
         {blogs.map(blog => {
           return (
-            <Col lg={4}>
-              <BlogArticle imgurl={blog.imgurl} heading={blog.heading} posted_by={blog.posted_by} date={blog.date} />
+            <Col lg={4} key={blog.id}>
+              <BlogArticle
+                imgurl={blog.imgurl}
+                heading={blog.heading}
+                posted_by={blog.posted_by}
+                date={blog.date}
+                id={blog.id}
+              />
               <div style={{ marginTop: 80 + 'px' }}></div>
             </Col>
           );

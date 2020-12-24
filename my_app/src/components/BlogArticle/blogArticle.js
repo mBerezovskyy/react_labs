@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './blogArticle.css';
 
@@ -12,9 +14,9 @@ export default function BlogArticle(props) {
         <Card.Text className="text-center">
           By <span className="by">{props.posted_by}</span> on <span className="on">{props.date}</span>
         </Card.Text>
-        <a href="/article" className="text-uppercase blog-link">
-          read more
-        </a>
+        <NavLink to={`blog/${props.id}`} exact className="text-uppercase blog-link">
+          go to item
+        </NavLink>
       </Card.Body>
     </Card>
   );

@@ -12,7 +12,7 @@ const ItemsList = props => {
       <Row>
         {axes.map(axe => {
           return (
-            <Col lg={3}>
+            <Col lg={3} key={axe.id}>
               <Card key={axe.id} className="list">
                 <Item brand={axe.brand} description={axe.description} price={axe.price} id={axe.id} />
               </Card>

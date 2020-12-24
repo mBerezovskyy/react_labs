@@ -18,9 +18,6 @@ export default function Item(props) {
           <NavLink to={`axe/${props.id}`} exact>
             go to item
           </NavLink>
-          {/* <Router>
-            <Route path={`axe/${props.id}`} component={SingleItemPage} exact className="item-button" />
-          </Router> */}
         </div>
       </Card.Body>
     </Card>
