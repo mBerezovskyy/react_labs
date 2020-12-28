@@ -1,31 +1,39 @@
-import Menu from './components/Menu/menu';
-import Slider from './components/Slider/slider';
-import ItemsList from './components/ItemsList/itemsList';
-import ItemsTypes from './components/ItemsTypes/itemsTypes';
-import BlogArticlesList from './components/BlogArticlesList/blogArticlesList';
-import Footer from './components/Footer/footer';
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Cart from './components/Cart';
+import Checkout from './components/Checkout';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import SingleItemPage from './components/SingleItemPage/SingleItemPage';
+import SingleBlogPage from './components/SingleBlogPage/SingleBlogPage';
 
-function App() {
-  return (
-    <div>
-      <Menu />
-      <Slider />
-      <ItemsTypes />
-      <div style={{ marginTop: 80 + 'px' }}></div>
-      <h1 className="text-center section-name">Best sellers</h1>
-      <div className="section-line"></div>
-      <ItemsList />
-      <div style={{ marginTop: 80 + 'px' }}></div>
-      <h1 className="text-center section-name">Our blog</h1>
-      <div className="section-line"></div>
-      <BlogArticlesList />
-      <div style={{ marginTop: 80 + 'px' }}></div>
-      <Footer />
-    </div>
-  );
+import Blog from './Pages/Blog/Blog';
+import Contacts from './Pages/Contacts/Contacts';
+import Catalog from './Pages/Catalog/Catalog';
+
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/cart" component={Cart} />
+
+            <Route path="/blog" component={Blog} exact />
+            <Route path="/catalog" component={Catalog} exact />
+            <Route path="/contacts" component={Contacts} exact />
+            <Route path="/axe/:id" component={SingleItemPage} exact />
+            <Route path="/blog/:id" component={SingleBlogPage} exact />
+            <Route path="/cart" component={Cart} exact />
+            <Route path="/checkout" component={Checkout} exact />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
