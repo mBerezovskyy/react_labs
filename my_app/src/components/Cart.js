@@ -1,48 +1,9 @@
-// import React, { useState, Fragment } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { Card, Container } from 'react-bootstrap';
-
-// import axios from 'axios';
-
-// export default function SingleItemPage(props) {
-//   const { id } = useParams();
-
-//   const [appState, setAppState] = useState({});
-
-//   axios.get(`/axe/${id}`).then(data => {
-//     setAppState(data.data);
-//     console.log(appState);
-//   });
-
-//   return (
-//     <Fragment>
-//       <Container>
-//         <div style={{ marginTop: 80 + 'px' }} />
-
-//         <Card>
-//           <Card.Img variant="top" src={appState.img_url} />
-//           <Card.Body>
-//             <Card.Title className="text-center">{appState.brand}</Card.Title>
-//             <Card.Text className="text-center">{appState.description}</Card.Text>
-//             <div style={{ marginTop: 20 + 'px', marginBottom: 20 + 'px', height: 1 + 'px', backgroundColor: 'grey' }} />
-//             <div className="text-center">
-//               <h1 className="price">Price: {appState.price} $</h1>
-//             </div>
-//           </Card.Body>
-//         </Card>
-//       </Container>
-//       <div style={{ marginTop: 80 + 'px' }} />
-//     </Fragment>
-//   );
-// }
-
-import React, { Component, useState, Fragment } from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Card, Container } from 'react-bootstrap';
-
-import axios from 'axios';
-
-class SingleItemPage extends Component {
+import { removeItem, addQuantity, subtractQuantity } from './store/actions/cartActions';
+import Recipe from './Recipe';
+class Cart extends Component {
   //to remove the item completely
   handleRemove = id => {
     this.props.removeItem(id);
@@ -116,10 +77,32 @@ class SingleItemPage extends Component {
           <h5>You have ordered:</h5>
           <ul className="collection">{addedItems}</ul>
         </div>
-        {/* <Recipe /> */}
+        <Recipe />
       </div>
     );
   }
 }
 
-export default SingleItemPage;
+const mapStateToProps = state => {
+  return {
+    items: state.addedItems,
+    //addedItems: state.addedItems
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    removeItem: id => {
+      dispatch(removeItem(id));
+    },
+    addQuantity: id => {
+      dispatch(addQuantity(id));
+    },
+    subtractQuantity: id => {
+      dispatch(subtractQuantity(id));
+    },
+  };
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Cart);

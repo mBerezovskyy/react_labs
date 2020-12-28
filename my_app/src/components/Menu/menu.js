@@ -23,7 +23,7 @@ export default function Menu() {
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            <Nav.Link href="#home">
+            <Nav.Link href="/cart">
               <FontAwesomeIcon icon={faShoppingCart} />
             </Nav.Link>
           </Navbar.Text>

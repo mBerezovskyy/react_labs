@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import { Card, Container } from 'react-bootstrap';
 
 import './SingleBlogPage.css';
@@ -19,7 +19,7 @@ export default function SingleItemPage(props) {
   return (
     <Fragment>
       <Container>
-        <div style={{ marginTop: 80 + 'px' }}></div>
+        <div style={{ marginTop: 80 + 'px' }} />
 
         <Card className="blog-article" key={appState.id}>
           <Card.Img variant="top" src={appState.imgurl} />
@@ -38,7 +38,7 @@ export default function SingleItemPage(props) {
           </Card.Body>
         </Card>
       </Container>
-      <div style={{ marginTop: 80 + 'px' }}></div>
+      <div style={{ marginTop: 80 + 'px' }} />
     </Fragment>
   );
 }
